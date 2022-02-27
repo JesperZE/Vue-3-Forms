@@ -53,21 +53,17 @@
 
       <h3>Extras</h3>
       <div>
-        <input
-          type="checkbox"
-          v-model="event.extras.catering"
-          class="field"
+        <BaseCheckbox 
+        v-model="event.extras.catering"
+        label="Catering" 
         />
-        <label>Catering</label>
       </div>
 
       <div>
-        <input
-          type="checkbox"
+        <BaseCheckbox
           v-model="event.extras.music"
-          class="field"
+          label="Live music"
         />
-        <label>Live music</label>
       </div>
 
       <button type="submit">Submit</button>
@@ -78,30 +74,32 @@
 </template>
 
 <script>
+import BaseCheckbox from "../components/BaseCheckbox.vue"
 export default {
-  data () {
-    return {
-      categories: [
-        'sustainability',
-        'nature',
-        'animal welfare',
-        'housing',
-        'education',
-        'food',
-        'community'
-      ],
-      event: {
-        category: '',
-        title: '',
-        description: '',
-        location: '',
-        pets: 1,
-        extras: {
-          catering: false,
-          music: false
-        }
-      }
-    }
-  }
+    data() {
+        return {
+            categories: [
+                "sustainability",
+                "nature",
+                "animal welfare",
+                "housing",
+                "education",
+                "food",
+                "community"
+            ],
+            event: {
+                category: "",
+                title: "",
+                description: "",
+                location: "",
+                pets: 1,
+                extras: {
+                    catering: false,
+                    music: false
+                }
+            }
+        };
+    },
+    components: { BaseCheckbox }
 }
 </script>
